@@ -6,7 +6,7 @@
       "course": "JavaSript",
       "module": "Basic JavaScript",
       "lesson": "Cycle For / While",
-      "progress": "15"
+      "progress": "200"
     },
     {
       "id": 2,
@@ -30,7 +30,7 @@
       "course": "HTML",
       "module": "Tags",
       "lesson": "div / ul ",
-      "progress": "9"
+      "progress": "10"
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "course": "ReactJs",
       "module": "Advanced themes",
       "lesson": "Refs and DOM",
-      "progress": "7"
+      "progress": "25"
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "course": "Java",
       "module": "OOP",
       "lesson": "Inheritance / Abstraction",
-      "progress": "7"
+      "progress": "3"
     },
     {
       "id": 7,
@@ -62,7 +62,7 @@
       "course": "Python",
       "module": "Try Except",
       "lesson": "except",
-      "progress": "0"
+      "progress": "5"
     },
     {
       "id": 9,
@@ -70,7 +70,7 @@
       "course": "ReactJs",
       "module": "Advanced themes",
       "lesson": "Portals",
-      "progress": "0"
+      "progress": "10"
     },
     {
       "id": 10,
@@ -86,7 +86,7 @@
       "course": "JavaSript",
       "module": "Error processing",
       "lesson": "try catch",
-      "progress": "0"
+      "progress": "12"
     },
     {
       "id": 12,
@@ -110,7 +110,7 @@
       "course": "ReactJs",
       "module": "Hooks",
       "lesson": "Custom hook",
-      "progress": "0"
+      "progress": "18"
     },
     {
       "id": 15,

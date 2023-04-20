@@ -10,15 +10,15 @@ import {
   useAsyncList,
   useCollator,
 } from "@adobe/react-spectrum";
+
 import { api } from "@/api";
 import { useWindowWidth } from "@/hooks/useWindowWidth";
-
-import EditorModal from "../EditorModal";
-
-import Pagination from "../Pagination";
 import usePagination from "@/hooks/usePagination";
 import { pageSize } from "@/constants";
-import { fetchPeople } from "@/api/people";
+import { getPeople } from "@/api/people";
+
+import EditorModal from "../EditorModal";
+import Pagination from "../Pagination";
 
 enum ColumnKeys {
   STUDENT = "student",
@@ -58,7 +58,7 @@ const AsyncSortTable = () => {
   const { isMobileAndTablet } = useWindowWidth();
 
   const [peopleLength, setPeopleLength] = useState<number>(0);
-  const [error, setErorr] = useState();
+  const [error, setError] = useState();
 
   const { totalPages, setPage, page, prevPage, nextPage } = usePagination({
     contentPerPage: pageSize,
@@ -67,7 +67,7 @@ const AsyncSortTable = () => {
 
   let collator = useCollator({ numeric: true });
 
-  const DESCENDINDG = "descending";
+  const DESCENDING = "descending";
 
   const list = useAsyncList<Character>({
     async load({ signal }) {
@@ -94,7 +94,7 @@ const AsyncSortTable = () => {
             const second = b[sortDescriptor.column];
             let cmp = collator.compare(first, second);
 
-            if (sortDescriptor.direction === DESCENDINDG) {
+            if (sortDescriptor.direction === DESCENDING) {
               cmp *= -1;
             }
             return cmp;
@@ -108,13 +108,14 @@ const AsyncSortTable = () => {
   useEffect(() => {
     const fetch = async () => {
       try {
-        const { data } = await fetchPeople();
+        const { data } = await getPeople();
+
         setPeopleLength(data.length);
-        console.log(data.length);
       } catch (e: any) {
-        setErorr(e.message);
+        setError(e.message);
       }
     };
+
     fetch();
   }, []);
 
@@ -160,8 +161,10 @@ const AsyncSortTable = () => {
           )}
         </TableBody>
       </TableView>
+
       <div>
         {error && <Heading>{error}</Heading>}
+
         <Pagination
           changePage={setPage}
           currentPage={page}

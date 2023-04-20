@@ -1,5 +1,4 @@
-import { api } from "@/api";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ActionButton,
   AsyncListData,
@@ -12,7 +11,8 @@ import {
   TextField,
 } from "@adobe/react-spectrum";
 import { Character } from "../Table";
-import { updateProgress } from "@/api/pagination";
+import { updatePerson } from "@/api/people";
+import useDebounce from "@/hooks/useDebounce";
 
 interface EditorModalProps {
   item: Character;
@@ -21,18 +21,30 @@ interface EditorModalProps {
 
 const EditorModal = ({ item, list }: EditorModalProps) => {
   const [countProgress, setCountProgress] = useState<string>(item.progress);
-  const [error, setError] = useState();
+  const [isOpen, setIsOpen] = useState(false);
+  const [error, setError] = useState("");
+
+  const debouncedValue = useDebounce<string>(countProgress, 500);
 
   useEffect(() => {
-    const fetch = async () => {
-      try {
-        await updateProgress({ item, countProgress });
-      } catch (e: any) {
-        setError(e.message);
-      }
-    };
-    fetch();
-  }, [countProgress]);
+    if (isOpen) {
+      const fetch = async () => {
+        try {
+          await updatePerson({
+            id: item.id,
+            data: { progress: debouncedValue },
+          });
+        } catch (e: any) {
+          setError(e.message);
+        }
+      };
+      fetch();
+    }
+  }, [debouncedValue, isOpen]);
+
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
 
   const handleClose = (close: () => void) => {
     close();
@@ -45,7 +57,9 @@ const EditorModal = ({ item, list }: EditorModalProps) => {
 
   return (
     <DialogTrigger type="modal">
-      <ActionButton isQuiet>Edit</ActionButton>
+      <ActionButton isQuiet onPress={handleOpen}>
+        Edit
+      </ActionButton>
 
       {(close) => (
         <Dialog width="400px">
@@ -53,6 +67,7 @@ const EditorModal = ({ item, list }: EditorModalProps) => {
           <Divider />
           <Content>
             <Heading marginBottom="20px">{error}</Heading>
+
             <TextField
               type="number"
               label="Progress"
@@ -61,12 +76,13 @@ const EditorModal = ({ item, list }: EditorModalProps) => {
               width="100%"
               marginBottom="40px"
             />
+
             <Button
               variant="secondary"
               onPress={() => handleClose(close)}
               width="100%"
             >
-              Cancel
+              Save
             </Button>
           </Content>
         </Dialog>
