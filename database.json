@@ -1,0 +1,140 @@
+{
+  "people": [
+    {
+      "id": 1,
+      "student": "Theo",
+      "course": "JavaSript",
+      "module": "Basic JavaScript",
+      "lesson": "Cycle For / While",
+      "progress": "15"
+    },
+    {
+      "id": 2,
+      "student": "Jack",
+      "course": "Python",
+      "module": "Set Methods",
+      "lesson": "add / clear",
+      "progress": "12"
+    },
+    {
+      "id": 3,
+      "student": "Thomas",
+      "course": "ReactJs",
+      "module": "Basic Hooks",
+      "lesson": "useState",
+      "progress": "12"
+    },
+    {
+      "id": 4,
+      "student": "Alexander",
+      "course": "HTML",
+      "module": "Tags",
+      "lesson": "div / ul ",
+      "progress": "9"
+    },
+    {
+      "id": 5,
+      "student": "James",
+      "course": "ReactJs",
+      "module": "Advanced themes",
+      "lesson": "Refs and DOM",
+      "progress": "7"
+    },
+    {
+      "id": 6,
+      "student": "Lucas",
+      "course": "Java",
+      "module": "OOP",
+      "lesson": "Inheritance / Abstraction",
+      "progress": "7"
+    },
+    {
+      "id": 7,
+      "student": "Henry",
+      "course": "JavaSript",
+      "module": "Code quality",
+      "lesson": "ninja code",
+      "progress": "0"
+    },
+    {
+      "id": 8,
+      "student": "Kylian",
+      "course": "Python",
+      "module": "Try Except",
+      "lesson": "except",
+      "progress": "0"
+    },
+    {
+      "id": 9,
+      "student": "Theodore",
+      "course": "ReactJs",
+      "module": "Advanced themes",
+      "lesson": "Portals",
+      "progress": "0"
+    },
+    {
+      "id": 10,
+      "student": "Benjamin",
+      "course": "CSS",
+      "module": "Pseudo class",
+      "lesson": "hover",
+      "progress": "0"
+    },
+    {
+      "id": 11,
+      "student": "Khai",
+      "course": "JavaSript",
+      "module": "Error processing",
+      "lesson": "try catch",
+      "progress": "0"
+    },
+    {
+      "id": 12,
+      "student": "Leo",
+      "course": "Python",
+      "module": "Math",
+      "lesson": "min / max",
+      "progress": "0"
+    },
+    {
+      "id": 13,
+      "student": "Jacob",
+      "course": "JavaSript",
+      "module": "Class",
+      "lesson": "Static methods properties",
+      "progress": "0"
+    },
+    {
+      "id": 14,
+      "student": "Max",
+      "course": "ReactJs",
+      "module": "Hooks",
+      "lesson": "Custom hook",
+      "progress": "0"
+    },
+    {
+      "id": 15,
+      "student": "Ethan",
+      "course": "JavaSript",
+      "module": "Data types",
+      "lesson": "Object",
+      "progress": "0"
+    },
+    {
+      "id": 16,
+      "student": "David",
+      "course": "Python",
+      "module": "Classes and Objects",
+      "lesson": "class",
+      "progress": "49"
+    },
+    {
+      "id": 17,
+      "student": "Chester",
+      "course": "JavaSript",
+      "module": "Promise / Async Await",
+      "lesson": "Async / Await",
+      "progress": "6"
+    }
+  ]
+}

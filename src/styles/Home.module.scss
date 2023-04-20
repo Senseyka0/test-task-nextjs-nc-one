@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px;
+  min-height: 100vh;
+}
+
+@media (max-width: 1000px) {
+  .main {
+    padding: 50px 20px;
+  }
+}

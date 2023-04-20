@@ -1,0 +1,38 @@
+.wrapperPagination {
+  display: flex;
+}
+
+.wrapperList {
+  display: flex;
+  list-style-type: none;
+  margin: 0 10px;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #383838;
+  margin: 0 5px;
+
+  transition: all 0.3s;
+
+  &.selected {
+    background-color: #464646;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  &:hover {
+    background-color: #464646;
+    color: #fff;
+  }
+}
+
+.pageButton {
+  border: 1px solid #464646;
+}
