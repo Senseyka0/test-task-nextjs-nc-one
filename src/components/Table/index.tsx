@@ -11,7 +11,6 @@ import {
 	useCollator,
 } from "@adobe/react-spectrum";
 
-import { api } from "@/api";
 import { useWindowWidth } from "@/hooks/useWindowWidth";
 import usePagination from "@/hooks/usePagination";
 import { pageSize } from "@/constants";
